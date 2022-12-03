@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <assert.h>
 
+// Counts the number of words
 int countWords(char str[]){
     int count=1;
     for (int i = 0; str[i] != '\0'; i++){
@@ -21,6 +22,7 @@ int countWords(char str[]){
     return count;
 }
 
+// Counts the number of sentences
 int countSent(char str[]){
     int count=0;
     for (int i = 0; str[i] != '\0'; i++){
@@ -33,6 +35,7 @@ int countSent(char str[]){
     return count;
 }
 
+// Counts the number of syllables
 int countSyl(char str[]){
     int count = 0, diff = 0;
     int i=0, j=0;
@@ -52,6 +55,7 @@ int countSyl(char str[]){
     return count;
 }
 
+// Implements the Fliesh-Kincaid formula
 float fkgrade(char str[]){
     float numWords = (float) countWords(str);
     float numSent = (float) countSent(str);
@@ -66,6 +70,7 @@ float fkgrade(char str[]){
 };
 
 int main() {
+    // Test Cases
     char plato[] = "He who is the real tyrant, whatever men may think, is the real slave, and is obliged to practise the greatest adulation and servility, and to be the flatterer of the vilest of mankind.  He has desires which he is utterly unable to satisfy, and has more wants than any one, and is truly poor, if you know how to inspect the whole soul of him: all his life long he is beset with fear and is full of convulsions and distractions, even as the State which he resembles: and surely the resemblance holds?";
 
     char aurelius[] = "Nothing pertains to human beings except what defines us as human.  No other things can be demanded of us.  They aren't proper to human nature, nor is it incomplete without them.  It follows that they are not our goal, or what helps us reach it -- the good.  If any of them were proper to us, it would be improper to disdain or resist it.  If the things themselves were good, it could hardly be good to give them up.  But in reality, the more we deny ourselves such things (and things like them) -- or are deprived of them involuntarily, even -- the better we become.";
